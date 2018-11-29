@@ -1,6 +1,6 @@
 FROM mcuadros/ofelia as ofelia
 
-FROM debian:stretch-slim
+FROM alexanderfefelov/mydumper
 
 COPY --from=ofelia /usr/bin/ofelia /usr/bin/ofelia
 
