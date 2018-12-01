@@ -15,11 +15,15 @@ RUN apt-get -qq update \
 
 RUN apt-get -qq update \
   && apt-get -qq install --yes --no-install-recommends \
+       default-libmysqlclient-dev gcc python-dev \
        percona-xtrabackup-24 \
        curl expect netcat sshpass \
-       python python-pip \
+       python python-pip python-setuptools \
   && apt-get -qq clean \
-  && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+  && pip install wheel \
+  && pip install \
+       ecks graphitesend librouteros pyyaml requests sql-to-graphite
 
 ENV GRAALVM_VERSION=1.0.0-rc9
 ENV GRAALVM_HOME=/graalvm-ce-$GRAALVM_VERSION
