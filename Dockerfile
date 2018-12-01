@@ -6,8 +6,16 @@ COPY --from=ofelia /usr/bin/ofelia /usr/bin/ofelia
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://repo.percona.com/apt/percona-release_0.1-6.stretch_all.deb /
 RUN apt-get -qq update \
   && apt-get -qq install --yes --no-install-recommends \
+       gpg \
+  && dpkg --install /percona-release_0.1-6.stretch_all.deb \
+  && rm --force /percona-release_0.1-6.stretch_all.deb
+
+RUN apt-get -qq update \
+  && apt-get -qq install --yes --no-install-recommends \
+       percona-xtrabackup-24 \
        curl expect netcat sshpass \
        python python-pip \
   && apt-get -qq clean \
