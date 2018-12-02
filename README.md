@@ -5,6 +5,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 ## What's inside
 
 ### Common tools
+
 - cifs-utils
 - curl
 - expect
@@ -25,13 +26,13 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - [ecks](https://github.com/cread/ecks)
 - [graphitesend](https://github.com/daniellawrence/graphitesend)
 - [librouteros](https://github.com/luqasz/librouteros)
-- [pyyaml](https://pyyaml.org/)
+- [pyyaml](https://pyyaml.org)
 - [requests](https://github.com/requests/requests)
 - [sql-to-graphite](https://github.com/opschops/sql-to-graphite)
 
 ### JVM
 
-- [GraalVM](https://www.graalvm.org/)
+- [GraalVM](https://www.graalvm.org)
 - [sbt](https://www.scala-sbt.org)
 
 ## Usage
