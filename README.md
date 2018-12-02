@@ -41,6 +41,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
       --name ofelia \
       --detach \
       --volume /etc/localtime:/etc/localtime:ro --volume /etc/timezone:/etc/timezone:ro \
+      --volume /var/run/docker.sock:/var/run/docker.sock \
       --volume ofelia:/ofelia \
       alexanderfefelov/ofelia
 
