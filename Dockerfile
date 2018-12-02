@@ -6,6 +6,9 @@ COPY --from=ofelia /usr/bin/ofelia /usr/bin/ofelia
 
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN echo "deb https://dl.bintray.com/sbt/debian /" > /etc/apt/sources.list.d/sbt.list \
+  && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+
 ADD https://repo.percona.com/apt/percona-release_0.1-6.stretch_all.deb /
 RUN apt-get -qq update \
   && apt-get -qq install --yes --no-install-recommends \
@@ -16,9 +19,10 @@ RUN apt-get -qq update \
 RUN apt-get -qq update \
   && apt-get -qq install --yes --no-install-recommends \
        default-libmysqlclient-dev gcc python-dev \
+       cifs-utils curl expect netcat openssh-client smbclient sshpass telnet \
        percona-xtrabackup-24 \
-       curl expect netcat sshpass \
        python python-pip python-setuptools \
+       sbt \
   && apt-get -qq clean \
   && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/* \
   && pip install wheel \
