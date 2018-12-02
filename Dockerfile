@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update \
   && apt-get -qq install --yes --no-install-recommends \
-       apt-transport-https dirmngr gpg \
+       apt-transport-https ca-certificates dirmngr gpg \
   && echo "deb https://dl.bintray.com/sbt/debian /" > /etc/apt/sources.list.d/sbt.list \
   && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
 
