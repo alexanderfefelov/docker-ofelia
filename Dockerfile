@@ -27,7 +27,7 @@ RUN apt-get -qq update \
   && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/* \
   && pip install wheel \
   && pip install \
-       ecks graphitesend librouteros pyyaml requests sql-to-graphite
+       ecks graphitesend librouteros pluginbase pyyaml requests stevedore sql-to-graphite
 
 ENV GRAALVM_VERSION=1.0.0-rc9
 ENV GRAALVM_HOME=/graalvm-ce-$GRAALVM_VERSION

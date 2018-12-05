@@ -26,8 +26,10 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - [ecks](https://github.com/cread/ecks)
 - [graphitesend](https://github.com/daniellawrence/graphitesend)
 - [librouteros](https://github.com/luqasz/librouteros)
+- [PluginBase](https://github.com/mitsuhiko/pluginbase)
 - [pyyaml](https://pyyaml.org)
 - [requests](https://github.com/requests/requests)
+- [stevedore](https://github.com/openstack/stevedore)
 - [sql-to-graphite](https://github.com/opschops/sql-to-graphite)
 
 ### JVM
