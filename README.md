@@ -23,15 +23,15 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 
 ### Python
 
-- [ecks](https://github.com/cread/ecks)
-- [graphitesend](https://github.com/daniellawrence/graphitesend)
-- [librouteros](https://github.com/luqasz/librouteros)
-- [PluginBase](https://github.com/mitsuhiko/pluginbase)
-- [pyyaml](https://pyyaml.org)
-- [requests](https://github.com/requests/requests)
-- [stevedore](https://github.com/openstack/stevedore)
-- [sql-to-graphite](https://github.com/opschops/sql-to-graphite)
-- [stomp.py](https://github.com/jasonrbriggs/stomp.py)
+- [Ecks](https://github.com/cread/ecks) provides a simple way to get data out of a remote machine using SNMP without having to deal with a single MIB or OID
+- [GraphiteSend](https://github.com/daniellawrence/graphitesend) is an easy python bindings to write to Carbon
+- [librouteros](https://github.com/luqasz/librouteros) is an implementation of MikroTik RouterOS API
+- [PluginBase](https://github.com/mitsuhiko/pluginbase) enables the development of flexible plugin systems
+- [PyYAML](https://pyyaml.org) is a full-featured YAML framework
+- [Requests](https://github.com/requests/requests): HTTP for Humans
+- [stevedore](https://github.com/openstack/stevedore) provides manager classes for implementing common patterns for using dynamically loaded extensions
+- [SQL-to-Graphite](https://github.com/opschops/sql-to-graphite) is a tool to easily send the results of SQL queries to Graphite
+- [stomp.py](https://github.com/jasonrbriggs/stomp.py) - is a client library for accessing messaging servers (such as ActiveMQ, Apollo or RabbitMQ) using the STOMP protocol
 
 ### JVM
 
