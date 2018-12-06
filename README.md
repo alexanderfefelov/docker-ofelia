@@ -31,6 +31,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - [requests](https://github.com/requests/requests)
 - [stevedore](https://github.com/openstack/stevedore)
 - [sql-to-graphite](https://github.com/opschops/sql-to-graphite)
+- [stomp.py](https://github.com/jasonrbriggs/stomp.py)
 
 ### JVM
 
