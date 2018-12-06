@@ -4,6 +4,14 @@ FROM alexanderfefelov/mydumper
 
 COPY --from=ofelia /usr/bin/ofelia /usr/bin/ofelia
 
+ENV GRAALVM_VERSION=1.0.0-rc9
+ENV GRAALVM_HOME=/graalvm-ce-$GRAALVM_VERSION
+ENV JAVA_HOME=$GRAALVM_HOME
+ENV PATH=$GRAALVM_HOME/bin:$PATH
+ADD https://github.com/oracle/graal/releases/download/vm-$GRAALVM_VERSION/graalvm-ce-$GRAALVM_VERSION-linux-amd64.tar.gz /
+RUN tar xfz /graalvm-ce-$GRAALVM_VERSION-linux-amd64.tar.gz \
+  && rm --force /graalvm-ce-$GRAALVM_VERSION-linux-amd64.tar.gz
+
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update \
@@ -28,14 +36,6 @@ RUN apt-get -qq update \
   && pip install wheel \
   && pip install \
        ecks graphitesend librouteros pluginbase pyyaml requests stevedore sql-to-graphite
-
-ENV GRAALVM_VERSION=1.0.0-rc9
-ENV GRAALVM_HOME=/graalvm-ce-$GRAALVM_VERSION
-ENV JAVA_HOME=$GRAALVM_HOME
-ENV PATH=$GRAALVM_HOME/bin:$PATH
-ADD https://github.com/oracle/graal/releases/download/vm-$GRAALVM_VERSION/graalvm-ce-$GRAALVM_VERSION-linux-amd64.tar.gz /
-RUN tar xfz /graalvm-ce-$GRAALVM_VERSION-linux-amd64.tar.gz \
-  && rm --force /graalvm-ce-$GRAALVM_VERSION-linux-amd64.tar.gz
 
 ADD container/ /
 
