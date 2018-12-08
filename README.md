@@ -26,6 +26,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - [Ecks](https://github.com/cread/ecks) provides a simple way to get data out of a remote machine using SNMP without having to deal with a single MIB or OID
 - [GraphiteSend](https://github.com/daniellawrence/graphitesend) is an easy python bindings to write to Carbon
 - [librouteros](https://github.com/luqasz/librouteros) is an implementation of MikroTik RouterOS API
+- [Paramiko](https://github.com/paramiko/paramiko) is a Python implementation of the SSHv2 protocol
 - [PluginBase](https://github.com/mitsuhiko/pluginbase) enables the development of flexible plugin systems
 - [PyYAML](https://pyyaml.org) is a full-featured YAML framework
 - [Requests](https://github.com/requests/requests): HTTP for Humans
