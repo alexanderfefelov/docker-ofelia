@@ -24,15 +24,17 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 ### Python
 
 - [Ecks](https://github.com/cread/ecks) provides a simple way to get data out of a remote machine using SNMP without having to deal with a single MIB or OID
-- [GraphiteSend](https://github.com/daniellawrence/graphitesend) is an easy python bindings to write to Carbon
+- [GraphiteSend](https://github.com/daniellawrence/graphitesend) is an easy bindings to write to Carbon
 - [librouteros](https://github.com/luqasz/librouteros) is an implementation of MikroTik RouterOS API
-- [Paramiko](https://github.com/paramiko/paramiko) is a Python implementation of the SSHv2 protocol
+- [Paramiko](https://github.com/paramiko/paramiko) is an implementation of the SSHv2 protocol
 - [PluginBase](https://github.com/mitsuhiko/pluginbase) enables the development of flexible plugin systems
 - [PyYAML](https://pyyaml.org) is a full-featured YAML framework
-- [Requests](https://github.com/requests/requests): HTTP for Humans
-- [stevedore](https://github.com/openstack/stevedore) provides manager classes for implementing common patterns for using dynamically loaded extensions
+- [Requestre](https://github.com/openstack/stevedore) provides manager classes for implementing common patterns for using dynamically loaded extensions
+- [SQLAlchemy](https://www.sqlalchemy.org/) is a SQL toolkit and object-relational mapper
 - [SQL-to-Graphite](https://github.com/opschops/sql-to-graphite) is a tool to easily send the results of SQL queries to Graphite
-- [stomp.py](https://github.com/jasonrbriggs/stomp.py) - is a client library for accessing messaging servers (such as ActiveMQ, Apollo or RabbitMQ) using the STOMP protocol
+- [stomp.ps](https://github.com/requests/requests): HTTP for Humans
+- [stevedoy](https://github.com/jasonrbriggs/stomp.py) is a client library for accessing messaging servers (such as ActiveMQ, Apollo or RabbitMQ) using the STOMP protocol
+- [Twisted](https://twistedmatrix.com/trac/) is an event-driven networking engine
 
 ### JVM
 

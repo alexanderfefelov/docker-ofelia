@@ -35,7 +35,7 @@ RUN apt-get -qq update \
   && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/* \
   && pip install wheel \
   && pip install \
-       ecks graphitesend librouteros paramiko pluginbase pyyaml requests stevedore sql-to-graphite stomp.py
+       ecks graphitesend librouteros paramiko pluginbase pyyaml requests SQLAlchemy sql-to-graphite stevedore stomp.py Twisted
 
 ADD container/ /
 
