@@ -29,11 +29,11 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - [Paramiko](https://github.com/paramiko/paramiko) is an implementation of the SSHv2 protocol
 - [PluginBase](https://github.com/mitsuhiko/pluginbase) enables the development of flexible plugin systems
 - [PyYAML](https://pyyaml.org) is a full-featured YAML framework
-- [Requestre](https://github.com/openstack/stevedore) provides manager classes for implementing common patterns for using dynamically loaded extensions
+- [Requests](https://github.com/requests/requests): HTTP for Humans
 - [SQLAlchemy](https://www.sqlalchemy.org/) is a SQL toolkit and object-relational mapper
 - [SQL-to-Graphite](https://github.com/opschops/sql-to-graphite) is a tool to easily send the results of SQL queries to Graphite
-- [stomp.ps](https://github.com/requests/requests): HTTP for Humans
-- [stevedoy](https://github.com/jasonrbriggs/stomp.py) is a client library for accessing messaging servers (such as ActiveMQ, Apollo or RabbitMQ) using the STOMP protocol
+- [stevedore](https://github.com/openstack/stevedore) provides manager classes for implementing common patterns for using dynamically loaded extensions
+- [stomp.py](https://github.com/jasonrbriggs/stomp.py) is a client library for accessing messaging servers (such as ActiveMQ, Apollo or RabbitMQ) using the STOMP protocol
 - [Twisted](https://twistedmatrix.com/trac/) is an event-driven networking engine
 
 ### JVM
