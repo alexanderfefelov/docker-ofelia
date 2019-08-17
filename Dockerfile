@@ -8,9 +8,9 @@ ENV GRAALVM_VERSION=19.1.1
 ENV GRAALVM_HOME=/graalvm-ce-$GRAALVM_VERSION
 ENV JAVA_HOME=$GRAALVM_HOME
 ENV PATH=$GRAALVM_HOME/bin:$PATH
-ADD https://github.com/oracle/graal/releases/download/vm-$GRAALVM_VERSION/graalvm-ce-$GRAALVM_VERSION-linux-amd64.tar.gz /
-RUN tar xfz /graalvm-ce-$GRAALVM_VERSION-linux-amd64.tar.gz \
-  && rm --force /graalvm-ce-$GRAALVM_VERSION-linux-amd64.tar.gz
+ADD https://github.com/oracle/graal/releases/download/vm-$GRAALVM_VERSION/graalvm-ce-linux-amd64-$GRAALVM_VERSION.tar.gz /
+RUN tar xfz /graalvm-ce-linux-amd64-$GRAALVM_VERSION.tar.gz \
+  && rm --force /graalvm-ce-linux-amd64-$GRAALVM_VERSION.tar.gz
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -35,7 +35,7 @@ RUN apt-get -qq update \
   && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/* \
   && pip install wheel \
   && pip install \
-       ecks graphitesend Jinja2 librouteros paramiko pexpect pluginbase pyyaml requests SQLAlchemy sql-to-graphite stevedore stomp.py Twisted
+       ecks fabric graphitesend Jinja2 librouteros paramiko pexpect pluginbase pyyaml requests SQLAlchemy sql-to-graphite stevedore stomp.py Twisted
 
 ADD container/ /
 
