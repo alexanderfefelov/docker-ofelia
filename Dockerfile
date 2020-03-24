@@ -4,13 +4,13 @@ FROM alexanderfefelov/mydumper
 
 COPY --from=ofelia /usr/bin/ofelia /usr/bin/ofelia
 
-ENV GRAALVM_VERSION=19.1.1
-ENV GRAALVM_HOME=/graalvm-ce-$GRAALVM_VERSION
+ENV GRAALVM_VERSION=20.0.0
+ENV GRAALVM_HOME=/graalvm-ce-java8-$GRAALVM_VERSION
 ENV JAVA_HOME=$GRAALVM_HOME
 ENV PATH=$GRAALVM_HOME/bin:$PATH
-ADD https://github.com/oracle/graal/releases/download/vm-$GRAALVM_VERSION/graalvm-ce-linux-amd64-$GRAALVM_VERSION.tar.gz /
-RUN tar xfz /graalvm-ce-linux-amd64-$GRAALVM_VERSION.tar.gz \
-  && rm --force /graalvm-ce-linux-amd64-$GRAALVM_VERSION.tar.gz
+ADD https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-$GRAALVM_VERSION/graalvm-ce-java8-linux-amd64-$GRAALVM_VERSION.tar.gz /
+RUN tar xfz /graalvm-ce-java8-linux-amd64-$GRAALVM_VERSION.tar.gz \
+  && rm --force /graalvm-ce-java8-linux-amd64-$GRAALVM_VERSION.tar.gz
 
 ENV DEBIAN_FRONTEND noninteractive
 
