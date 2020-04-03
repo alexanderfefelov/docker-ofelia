@@ -16,6 +16,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - smbclient
 - sshpass
 - telnet
+- wait-for-it
 
 ### Backup tools
 
