@@ -9,6 +9,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - cifs-utils
 - curl
 - expect
+- MySQL client
 - netcat
 - OpenSSH client
 - Python
