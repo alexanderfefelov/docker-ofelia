@@ -16,7 +16,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - smbclient
 - sshpass
 - telnet
-- wait-for-it
+- [wait-for-it](https://github.com/vishnubob/wait-for-it)
 
 ### Backup tools
 
@@ -48,6 +48,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 
 ## Usage
 
+    docker pull alexanderfefelov/ofelia
     docker run \
       --name ofelia \
       --detach \
