@@ -35,7 +35,7 @@ RUN apt-get -qq update \
   && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/* \
   && pip install wheel \
   && pip install \
-       ecks fabric graphitesend Jinja2 librouteros paramiko pexpect pluginbase pyyaml requests SQLAlchemy sql-to-graphite stevedore stomp.py Twisted \
+       ecks fabric graphitesend Jinja2 librouteros paramiko pexpect pluginbase pymysql pyyaml requests SQLAlchemy sql-to-graphite stevedore stomp.py Twisted \
   && curl --silent https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh > /usr/local/bin/wait-for-it.sh && chmod +x /usr/local/bin/wait-for-it.sh
 
 ADD container/ /

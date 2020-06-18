@@ -33,6 +33,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - [Paramiko](https://github.com/paramiko/paramiko) is an implementation of the SSHv2 protocol
 - [Pexpect](https://github.com/pexpect/pexpect) is a module for controlling interactive programs in a pseudo-terminal
 - [PluginBase](https://github.com/mitsuhiko/pluginbase) enables the development of flexible plugin systems
+- [PyMySQL](https://github.com/PyMySQL/PyMySQL) is pure Python MySQL client
 - [PyYAML](https://pyyaml.org) is a full-featured YAML framework
 - [Requests](https://github.com/requests/requests): HTTP for Humans
 - [SQLAlchemy](https://www.sqlalchemy.org) is a SQL toolkit and object-relational mapper
