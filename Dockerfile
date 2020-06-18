@@ -4,7 +4,7 @@ FROM alexanderfefelov/mydumper
 
 COPY --from=ofelia /usr/bin/ofelia /usr/bin/ofelia
 
-ENV GRAALVM_VERSION=20.0.0
+ENV GRAALVM_VERSION=20.1.0
 ENV GRAALVM_HOME=/graalvm-ce-java8-$GRAALVM_VERSION
 ENV JAVA_HOME=$GRAALVM_HOME
 ENV PATH=$GRAALVM_HOME/bin:$PATH
