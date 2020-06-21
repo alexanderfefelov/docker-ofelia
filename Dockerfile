@@ -1,4 +1,4 @@
-FROM mcuadros/ofelia as ofelia
+FROM mcuadros/ofelia:v0.3.0 as ofelia
 
 FROM alexanderfefelov/mydumper
 
