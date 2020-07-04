@@ -27,7 +27,7 @@ RUN dpkg --install /percona-release_0.1-6.stretch_all.deb \
 RUN apt-get -qq update \
   && apt-get -qq install --yes --no-install-recommends \
        default-libmysqlclient-dev gcc musl python-dev \
-       cifs-utils curl expect mysql-client netcat openssh-client smbclient sshpass telnet \
+       cifs-utils curl expect jq mysql-client netcat openssh-client smbclient sshpass telnet \
        percona-xtrabackup-24 \
        python python-pip python-setuptools \
        sbt \
