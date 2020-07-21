@@ -26,6 +26,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 
 ### Python
 
+- [atomicwrites](https://github.com/untitaker/python-atomicwrites) implements atomic file writes
 - [Ecks](https://github.com/cread/ecks) provides a simple way to get data out of a remote machine using SNMP without having to deal with a single MIB or OID
 - [Fabric](https://github.com/fabric/fabric) is a high level Python library designed to execute shell commands remotely over SSH
 - [GraphiteSend](https://github.com/daniellawrence/graphitesend) is an easy bindings to write to Carbon
