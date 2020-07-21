@@ -44,25 +44,26 @@ RUN apt-get -qq clean \
 RUN pip install --quiet \
       wheel \
   && pip install --quiet \
-      atomicwrites \
-      ecks \
-      fabric \
-      graphitesend \
-      jinja2 \
-      librouteros \
-      paramiko \
-      pexpect \
-      pluginbase \
-      pymysql \
-      pyyaml \
-      requests \
-      sqlalchemy \
-      sql-to-graphite \
-      stevedore \
-      stomp.py \
-      twisted
+       atomicwrites \
+       ecks \
+       fabric \
+       graphitesend \
+       jinja2 \
+       librouteros \
+       paramiko \
+       pexpect \
+       pluginbase \
+       pymysql \
+       pyyaml \
+       requests \
+       sqlalchemy \
+       sql-to-graphite \
+       stevedore \
+       stomp.py \
+       twisted
 
-RUN curl --silent https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh > /usr/local/bin/wait-for-it.sh && chmod +x /usr/local/bin/wait-for-it.sh
+RUN curl --silent https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh > /usr/local/bin/wait-for-it.sh \
+  && chmod +x /usr/local/bin/wait-for-it.sh
 
 ADD container/ /
 
