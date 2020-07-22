@@ -38,6 +38,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - [PyMySQL](https://github.com/PyMySQL/PyMySQL) is pure Python MySQL client
 - [PyYAML](https://pyyaml.org) is a full-featured YAML framework
 - [Requests](https://github.com/requests/requests): HTTP for Humans
+- [rotate-backups](https://github.com/xolox/python-rotate-backups) implements simple command line interface for backup rotation
 - [SQLAlchemy](https://www.sqlalchemy.org) is a SQL toolkit and object-relational mapper
 - [SQL-to-Graphite](https://github.com/opschops/sql-to-graphite) is a tool to easily send the results of SQL queries to Graphite
 - [stevedore](https://github.com/openstack/stevedore) provides manager classes for implementing common patterns for using dynamically loaded extensions

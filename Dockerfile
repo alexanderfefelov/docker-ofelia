@@ -56,6 +56,7 @@ RUN pip install --quiet \
        pymysql \
        pyyaml \
        requests \
+       rotate-backups \
        sqlalchemy \
        sql-to-graphite \
        stevedore \
