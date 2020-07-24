@@ -10,7 +10,7 @@ ENV GRAALVM_HOME=/graalvm-ce-java8-$GRAALVM_VERSION
 ENV JAVA_HOME=$GRAALVM_HOME
 ENV PATH=$GRAALVM_HOME/bin:$PATH
 ADD https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-$GRAALVM_VERSION/$GRAALVM_TGZ /
-RUN tar xfz /$GRAALVM_TGZ \
+RUN tar --extract --gzip --file /$GRAALVM_TGZ \
   && rm --force /$GRAALVM_TGZ
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -32,11 +32,25 @@ RUN dpkg --install /$PERCONA_DEB \
 
 RUN apt-get -qq update \
   && apt-get -qq install --no-install-recommends \
-       default-libmysqlclient-dev gcc musl python-dev \
-       cifs-utils curl expect jq mysql-client netcat openssh-client smbclient sshpass telnet \
+       cifs-utils \
+       curl \
+       default-libmysqlclient-dev \
+       expect \
+       gcc \
+       jq \
+       musl \
+       mysql-client \
+       netcat \
+       openssh-client \
        percona-xtrabackup-24 \
-       python python-pip python-setuptools \
-       sbt
+       python \
+       python-dev \
+       python-pip \
+       python-setuptools \
+       sbt \
+       smbclient \
+       sshpass \
+       telnet
 
 RUN apt-get -qq clean \
   && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/*
