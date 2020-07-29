@@ -13,8 +13,6 @@ ADD https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-$GRAALVM_V
 RUN tar --extract --gzip --file /$GRAALVM_TGZ \
   && rm --force /$GRAALVM_TGZ
 
-ENV DEBIAN_FRONTEND noninteractive
-
 RUN apt-get -qq update \
   && apt-get -qq install --no-install-recommends \
        apt-transport-https \
