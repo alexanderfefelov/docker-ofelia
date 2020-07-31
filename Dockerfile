@@ -131,4 +131,5 @@ RUN apt-get -qq clean \
 
 ADD container/ /
 
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/usr/bin/ofelia", "daemon", "--config", "/ofelia/cfg/config.ini"]

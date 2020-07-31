@@ -80,6 +80,12 @@ docker run \
   alexanderfefelov/ofelia
 ```
 
+Try also
+
+```
+docker run --rm --tty alexanderfefelov/ofelia bash -c :
+```
+
 ## Where is my data?
 
 ```
