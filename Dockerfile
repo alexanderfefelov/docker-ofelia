@@ -28,7 +28,9 @@ ENV PATH=$GRAALVM_HOME/bin:$PATH
 ENV GRAALVM_STUFF=graalvm-ce-java8-linux-amd64-$GRAALVM_VERSION.tar.gz
 ADD https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-$GRAALVM_VERSION/$GRAALVM_STUFF /
 RUN tar --extract --gzip --file /$GRAALVM_STUFF \
-  && rm --force /$GRAALVM_STUFF
+  && rm --force /$GRAALVM_STUFF \
+  && gu install -c org.graalvm.R \
+  && gu install -c org.graalvm.ruby
 
 #
 # sbt
