@@ -124,3 +124,7 @@ RUN apt-get -qq install --no-install-recommends \
 #
 RUN apt-get -qq clean \
   && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+ADD container/ /
+
+CMD ["/usr/bin/ofelia", "daemon", "--config", "/ofelia/cfg/config.ini"]
