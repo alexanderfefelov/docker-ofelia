@@ -99,11 +99,12 @@ RUN apt-get -qq install --no-install-recommends \
       python3-paramiko \
       python3-pip \
       python3-pluginbase \
+      python3-prometheus-client \
       python3-psycopg2 \
       python3-pymssql \
       python3-pymysql \
-      python3-requests \
       python3-pysnmp4 \
+      python3-requests \
       python3-sqlalchemy \
       python3-stevedore \
       python3-stomp \

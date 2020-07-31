@@ -48,11 +48,12 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - netmiko - SSH connections to network devices
 - paramiko - SSH connections
 - pluginbase - support for building plugins systems
+- prometheus-client - Prometheus client
 - psycopg2 - PostgreSQL driver
 - pymssql - Microsoft SQL server driver
 - pymysql - MySQL driver
-- requests - HTTP library
 - pysnmp4 - SNMP library
+- requests - HTTP library
 - rotate-backups - backup rotation
 - sqlalchemy - SQL toolkit and ORM 
 - stevedore - support for dynamic plugins
