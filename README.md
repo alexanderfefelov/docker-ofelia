@@ -74,6 +74,7 @@ docker run \
   --volume /etc/localtime:/etc/localtime:ro --volume /etc/timezone:/etc/timezone:ro \
   --volume /var/run/docker.sock:/var/run/docker.sock \
   --volume ofelia:/ofelia \
+  --health-cmd /healthcheck.sh --health-start-period 30s --health-interval 1m --health-timeout 2s --health-retries 3 \
   alexanderfefelov/ofelia
 ```
 
