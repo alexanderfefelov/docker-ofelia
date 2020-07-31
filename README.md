@@ -31,6 +31,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - JavaScript (provided by GraalVM)
 - Node.js (provided by GraalVM)
 - Python
+- Python (provided by GraalVM)
 - R (provided by GraalVM)
 - Ruby (provided by GraalVM)
 - Tcl
@@ -88,6 +89,6 @@ docker volume inspect --format '{{ .Mountpoint }}' ofelia
 
 ```
 docker rm --force ofelia
-docker image rm ofelia
+docker image rm alexanderfefelov/ofelia
 docker volume rm ofelia
 ```
