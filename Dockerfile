@@ -1,83 +1,124 @@
 FROM mcuadros/ofelia:v0.3.0 as ofelia
 
-FROM alexanderfefelov/mydumper
+FROM ubuntu:20.04
 
+#
+# Ofelia
+#
 COPY --from=ofelia /usr/bin/ofelia /usr/bin/ofelia
 
+#
+# Prerequisites
+#
+RUN apt-get -qq update \
+  && DEBIAN_FRONTEND=noninteractive apt-get -qq install --no-install-recommends \
+       ca-certificates \
+       curl \
+       gnupg2 \
+       lsb-release \
+       tzdata
+
+#
+# GraalVM
+#
 ENV GRAALVM_VERSION=20.1.0
-ENV GRAALVM_TGZ=graalvm-ce-java8-linux-amd64-$GRAALVM_VERSION.tar.gz
 ENV GRAALVM_HOME=/graalvm-ce-java8-$GRAALVM_VERSION
 ENV JAVA_HOME=$GRAALVM_HOME
 ENV PATH=$GRAALVM_HOME/bin:$PATH
-ADD https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-$GRAALVM_VERSION/$GRAALVM_TGZ /
-RUN tar --extract --gzip --file /$GRAALVM_TGZ \
-  && rm --force /$GRAALVM_TGZ
+ENV GRAALVM_STUFF=graalvm-ce-java8-linux-amd64-$GRAALVM_VERSION.tar.gz
+ADD https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-$GRAALVM_VERSION/$GRAALVM_STUFF /
+RUN tar --extract --gzip --file /$GRAALVM_STUFF \
+  && rm --force /$GRAALVM_STUFF
 
-RUN apt-get -qq update \
-  && apt-get -qq install --no-install-recommends \
-       apt-transport-https \
-       ca-certificates \
-       dirmngr \
-       gpg
-
+#
+# sbt
+#
 RUN echo "deb https://dl.bintray.com/sbt/debian /" > /etc/apt/sources.list.d/sbt.list \
-  && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
-
-ENV PERCONA_DEB=percona-release_0.1-6.stretch_all.deb
-ADD https://repo.percona.com/apt/$PERCONA_DEB /
-RUN dpkg --install /$PERCONA_DEB \
-  && rm --force /$PERCONA_DEB
-
+  && curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | apt-key add
 RUN apt-get -qq update \
   && apt-get -qq install --no-install-recommends \
-       cifs-utils \
-       curl \
-       default-libmysqlclient-dev \
-       expect \
-       gcc \
-       jq \
-       musl \
-       mysql-client \
-       netcat \
-       openssh-client \
-       percona-xtrabackup-24 \
-       python \
-       python-dev \
-       python-pip \
-       python-setuptools \
-       sbt \
-       smbclient \
-       sshpass \
-       telnet
+       sbt
 
-RUN apt-get -qq clean \
-  && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#
+# mydumper
+#
+ENV MYDUMPER_VERSION=0.9.5
+ENV MYDUMPER_REVISION=2
+ENV MYDUMPER_STUFF=mydumper_$MYDUMPER_VERSION-$MYDUMPER_REVISION.stretch_amd64.deb
+ADD https://github.com/maxbube/mydumper/releases/download/v$MYDUMPER_VERSION/$MYDUMPER_STUFF /
+RUN apt-get -qq install --no-install-recommends \
+      libatomic1 \
+      libglib2.0-0 \
+      libssl1.1 \
+  && dpkg --install /$MYDUMPER_STUFF \
+  && rm --force /$MYDUMPER_STUFF
 
-RUN pip install --quiet \
-      wheel \
-  && pip install --quiet \
-       atomicwrites \
-       ecks \
-       fabric \
-       graphitesend \
-       jinja2 \
-       librouteros \
-       paramiko \
-       pexpect \
-       pluginbase \
-       pymysql \
-       pyyaml \
-       requests \
-       rotate-backups \
-       sqlalchemy \
-       sql-to-graphite \
-       stevedore \
-       stomp.py \
-       twisted
+#
+# XtraBackup
+#
+ENV PERCONA_STUFF=percona-release_latest.focal_all.deb
+ADD https://repo.percona.com/apt/$PERCONA_STUFF /
+RUN dpkg --install /$PERCONA_STUFF \
+  && rm --force /$PERCONA_STUFF
+RUN apt-get -qq update \
+  && apt-get -qq install --no-install-recommends \
+       percona-xtrabackup-24
 
+#
+# Common tools
+#
+RUN apt-get -qq install --no-install-recommends \
+      cifs-utils \
+      expect \
+      jq \
+      mysql-client \
+      netcat \
+      openssh-client \
+      postgresql-client \
+      sshpass \
+      telnet
 RUN curl --silent https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh > /usr/local/bin/wait-for-it.sh \
   && chmod +x /usr/local/bin/wait-for-it.sh
 
-ADD container/ /
+#
+# Python
+#
+RUN apt-get -qq install --no-install-recommends \
+      python3-atomicwrites \
+      python3-elasticsearch \
+      python3-fabric \
+      python3-graphite2 \
+      python3-influxdb \
+      python3-jinja2 \
+      python3-librouteros \
+      python3-netmiko \
+      python3-paramiko \
+      python3-pip \
+      python3-pluginbase \
+      python3-psycopg2 \
+      python3-pymssql \
+      python3-pymysql \
+      python3-requests \
+      python3-pysnmp4 \
+      python3-sqlalchemy \
+      python3-stevedore \
+      python3-stomp \
+      python3-twisted
+RUN pip3 install --quiet \
+      rotate-backups
 
-CMD ["/usr/bin/ofelia", "daemon", "--config", "/ofelia/cfg/config.ini"]
+#
+# Tcl
+#
+RUN apt-get -qq install --no-install-recommends \
+      tcl \
+      tcl8.6-tdbc \
+      tcl8.6-tdbc-mysql \
+      tcl8.6-tdbc-postgres \
+      tcl8.6-tdbc-sqlite3
+
+#
+# Cleanup
+#
+RUN apt-get -qq clean \
+  && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/*
