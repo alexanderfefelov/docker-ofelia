@@ -16,6 +16,7 @@ RUN apt-get -qq update \
        curl \
        gnupg2 \
        lsb-release \
+       musl \
        tzdata
 
 #
