@@ -53,6 +53,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - pymssql - Microsoft SQL server driver
 - pymysql - MySQL driver
 - pysnmp4 - SNMP library
+- redis - Redis client
 - requests - HTTP library
 - rotate-backups - backup rotation
 - sqlalchemy - SQL toolkit and ORM 

@@ -105,6 +105,7 @@ RUN apt-get -qq install --no-install-recommends \
       python3-pymssql \
       python3-pymysql \
       python3-pysnmp4 \
+      python3-redis \
       python3-requests \
       python3-sqlalchemy \
       python3-stevedore \
