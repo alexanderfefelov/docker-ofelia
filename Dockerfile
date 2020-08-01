@@ -86,6 +86,12 @@ RUN curl --silent https://raw.githubusercontent.com/vishnubob/wait-for-it/master
   && chmod +x /usr/local/bin/wait-for-it.sh
 
 #
+# Lua
+#
+RUN apt-get -qq install --no-install-recommends \
+      lua5.3
+
+#
 # Python
 #
 RUN apt-get -qq install --no-install-recommends \

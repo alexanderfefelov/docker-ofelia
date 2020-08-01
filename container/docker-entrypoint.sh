@@ -5,6 +5,10 @@ echo "--- Java"
 java -version
 
 echo
+echo "--- Lua"
+lua -v
+
+echo
 echo "--- JavaScript (provided by GraalVM)"
 js --version
 

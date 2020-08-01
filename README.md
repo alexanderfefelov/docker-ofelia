@@ -29,6 +29,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 ### Scripting engines
 
 - JavaScript (provided by GraalVM)
+- Lua
 - Node.js (provided by GraalVM)
 - Python
 - Python (provided by GraalVM)
