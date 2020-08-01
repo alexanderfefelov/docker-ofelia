@@ -77,6 +77,7 @@ docker run \
   --volume /etc/localtime:/etc/localtime:ro --volume /etc/timezone:/etc/timezone:ro \
   --volume /var/run/docker.sock:/var/run/docker.sock \
   --volume ofelia:/ofelia \
+  --volume ofelia-ivy:/root/.ivy2 \
   --health-cmd /healthcheck.sh --health-start-period 30s --health-interval 1m --health-timeout 2s --health-retries 3 \
   alexanderfefelov/ofelia
 ```
@@ -99,4 +100,5 @@ docker volume inspect --format '{{ .Mountpoint }}' ofelia
 docker rm --force ofelia
 docker image rm alexanderfefelov/ofelia
 docker volume rm ofelia
+docker volume rm ofelia-ivy
 ```
