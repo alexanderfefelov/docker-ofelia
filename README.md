@@ -8,6 +8,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 
 - CIFS utils
 - Expect
+- HTTPie
 - jq
 - MySQL client
 - netcat

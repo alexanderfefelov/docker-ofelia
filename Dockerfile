@@ -75,6 +75,7 @@ RUN apt-get -qq update \
 RUN apt-get -qq install --no-install-recommends \
       cifs-utils \
       expect \
+      httpie \
       jq \
       mysql-client \
       netcat \
