@@ -81,6 +81,7 @@ RUN apt-get -qq install --no-install-recommends \
       netcat \
       openssh-client \
       postgresql-client \
+      redis-tools \
       sshpass \
       telnet
 RUN curl --silent https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh > /usr/local/bin/wait-for-it.sh \

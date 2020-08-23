@@ -14,6 +14,7 @@ Supercharged [Ofelia](https://github.com/mcuadros/ofelia) job scheduler in a Doc
 - netcat
 - OpenSSH client
 - PostgreSQL client
+- Redis tools
 - sshpass
 - Telnet client
 
