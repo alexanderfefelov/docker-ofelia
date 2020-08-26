@@ -76,6 +76,7 @@ RUN apt-get -qq install --no-install-recommends \
       cifs-utils \
       expect \
       httpie \
+      influxdb-client \
       jq \
       mysql-client \
       netcat \
